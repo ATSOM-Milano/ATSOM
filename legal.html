@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11335C">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Privacy & Termini | myATSOM</title>
+    <meta name="description" content="Informativa sulla privacy e termini e condizioni di utilizzo di myATSOM.">
+    <link rel="icon" type="image/png" href="FavIconAtsom.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="myATSOM">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
+    <style>
+        /* Tab switcher */
+        .legal-tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 0;
+        }
+
+        .legal-tab {
+            flex: 1;
+            padding: 14px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.9rem;
+            background: #0D2646;
+            color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .legal-tab:first-child {
+            border-radius: 17px 4px 4px 17px;
+        }
+
+        .legal-tab:last-child {
+            border-radius: 4px 17px 17px 4px;
+        }
+
+        .legal-tab.active {
+            background: var(--atsom-navy);
+            color: white;
+        }
+
+        .legal-tab:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Content panels */
+        .legal-panel {
+            display: none;
+        }
+
+        .legal-panel.active {
+            display: block;
+        }
+
+        /* Section within a panel */
+        .legal-block {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 17px;
+            padding: 28px 30px;
+            margin-bottom: 12px;
+        }
+
+        .legal-block h2 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #71B3F5;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-block p,
+        .legal-block li {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+        }
+
+        .legal-block ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .legal-block ul li {
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .legal-block ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #71B3F5;
+            font-weight: 700;
+        }
+
+        /* Privacy badge */
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(113, 179, 245, 0.15);
+            border: 1px solid rgba(113, 179, 245, 0.3);
+            border-radius: 100px;
+            padding: 8px 16px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-badge span {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #71B3F5;
+        }
+    </style>
+</head>
+
+<body class="landing-body" style="background: white !important;">
+    <div class="container-figma" style="margin-top: 20px; padding-bottom: 20px;">
+
+        <!-- News Ticker -->
+        <div class="news-ticker-container">
+            <div class="news-label">Ultime notizie</div>
+            <div class="news-scroll">
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+            </div>
+        </div>
+
+        <!-- Split Header Nav -->
+        <nav class="header-split">
+            <div class="header-btn header-logo-box radius-left">
+                <a href="index.html"><img src="atsom.png" alt="ATSOM Logo"></a>
+            </div>
+            <a href="chi-siamo.html" class="header-btn btn-chi-siamo radius-mid" style="background: #0D2646;">Chi
+                siamo</a>
+            <a href="https://news.atsom.org" class="header-btn btn-news radius-mid">ATSOMnews</a>
+            <a href="myAtsom.html" class="header-btn btn-myatsom radius-right">myATSOM</a>
+        </nav>
+
+        <!-- Legal Content -->
+        <section style="padding: 30px 0 40px;">
+
+            <!-- Page title -->
+            <div class="section-header-bar" id="privacy">Privacy &amp; Termini</div>
+
+            <!-- Main legal box -->
+            <div class="box-figma reveal" style="border-radius: 4px 4px 17px 17px; padding: 30px;">
+
+                <!-- Privacy badge -->
+                <div class="privacy-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71B3F5" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span>myATSOM è progettata privacy-first, nessun dato personale verrà salvato</span>
+                </div>
+
+                <!-- Tab buttons -->
+                <div class="legal-tabs" style="margin-bottom: 20px;">
+                    <button class="legal-tab active" onclick="switchTab('privacy-panel', this)" id="tab-privacy">
+                        🔒 Informativa sulla Privacy
+                    </button>
+                    <button class="legal-tab" onclick="switchTab('terms-panel', this)" id="tab-terms">
+                        📄 Termini e Condizioni
+                    </button>
+                </div>
+
+                <!-- ── PRIVACY PANEL ── -->
+                <div class="legal-panel active" id="privacy-panel">
+
+                    <div class="legal-block">
+                        <h2>1. Titolare del Trattamento</h2>
+                        <p>Il titolare del trattamento è Mattia Forgione, fondatore dell'Associazione Trasporti Sud
+                            Ovest Milanese (ATSOM).</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>2. Nessun Dato Salvato</h2>
+                        <p>myATSOM è progettata per essere "privacy-first". Non salviamo alcun dato personale degli
+                            utenti sui nostri server. In particolare:</p>
+                        <ul>
+                            <li>Non utilizziamo database per memorizzare le tue ricerche o la tua posizione.</li>
+                            <li>Non è richiesta alcuna registrazione o creazione di account.</li>
+                            <li>Non salviamo nomi, contatti o indirizzi e-mail.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>3. Cookie e Tracciamento</h2>
+                        <p>L'applicazione myATSOM NON utilizza cookie di profilazione o script di tracciamento di terze
+                            parti. Tutto il funzionamento dell'app è basato su tecnologie locali al tuo browser.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>4. Geolocalizzazione</h2>
+                        <p>L'app richiede l'accesso alla tua posizione solo per mostrare le fermate più vicine a te
+                            sulla mappa. La tua posizione viene elaborata esclusivamente dal tuo browser e NON viene mai
+                            inviata o memorizzata sui nostri server o su quelli di servizi di terze parti.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>5. Hosting e Log di Sistema</h2>
+                        <p>Il sito è ospitato da GitHub Pages. Come ogni servizio web, il fornitore dell'hosting
+                            potrebbe registrare i log di sistema che includono il tuo indirizzo IP per motivi di
+                            sicurezza tecnica e stabilità del servizio.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>6. Comunicazione con Firebase e Firestore</h2>
+                        <p>myATSOM utilizza i servizi <strong style="color: white;">Firebase</strong> e <strong
+                                style="color: white;">Firestore</strong> di Google per abilitare alcune funzionalità
+                            dell'app, tra cui:</p>
+                        <ul>
+                            <li>La ricezione di notifiche e avvisi in tempo reale sui mezzi pubblici.</li>
+                            <li>La gestione delle segnalazioni collettive (ritardi, corse saltate, guasti).</li>
+                            <li>Il recupero di dati dinamici come orari e aggiornamenti di servizio.</li>
+                        </ul>
+                        <p style="margin-top: 10px;">Queste comunicazioni avvengono in modo anonimo: <strong
+                                style="color: white;">non vengono raccolti, trasmessi o conservati dati personali né
+                                informazioni identificative del dispositivo dell'utente</strong>. ATSOM non associa mai
+                            le richieste effettuate a Firebase/Firestore a singoli individui.</p>
+                    </div>
+
+                </div>
+
+                <!-- ── TERMINI PANEL ── -->
+                <div class="legal-panel" id="terms-panel" style="scroll-margin-top: 100px;">
+
+                    <div class="legal-block">
+                        <h2>1. Finalità del Servizio</h2>
+                        <p>myATSOM è uno strumento informativo indipendente creato per facilitare la consultazione degli
+                            orari e delle linee di trasporto pubblico locale nel Sud Ovest Milanese. Non è
+                            un'applicazione ufficiale o affiliata alle aziende di trasporto citate o alla Agenzia per il
+                            Trasporto Pubblico Locale del bacino della Città Metropolitana di Milano.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>2. Accuratezza dei Dati</h2>
+                        <p>Sebbene facciamo il possibile per mantenere i dati aggiornati e accurati, gli orari e i
+                            percorsi sono basati su dati pubblicamente disponibili e potrebbero subire variazioni senza
+                            preavviso da parte dei vettori (STAV s.p.a. e altri). Non garantiamo l'esattezza assoluta
+                            delle informazioni fornite.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>3. Esclusione di Responsabilità</h2>
+                        <p>ATSOM e gli sviluppatori di myATSOM non sono responsabili per eventuali danni, diretti o
+                            indiretti, derivanti dall'utilizzo dell'app, inclusi (ma non limitati a):</p>
+                        <ul>
+                            <li>Mancata coincidenza di mezzi di trasporto.</li>
+                            <li>Ritardi causati da informazioni non aggiornate o errate.</li>
+                            <li>Qualsiasi disagio causato dall'affidamento esclusivo sui dati dell'app.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>4. Modifiche al Servizio</h2>
+                        <p>Ci riserviamo il diritto di sospendere o modificare il servizio in qualsiasi momento per
+                            manutenzione o aggiornamenti.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-figma">
+            <div class="footer-milan-box">
+                <img src="img/BasedInMilan.png" alt="Based in Milan" style="height: 40px;">
+                <img src="img/MilanSkylineHitachi.png" alt="Skyline" class="milan-graphic"
+                    style="opacity: 0.25; height: 80%;">
+            </div>
+            <div class="footer-legal-bar">
+                <div style="color: white; display: flex; align-items: center; gap: 16px;">
+                    <span>© ATSOM | Associazione Trasporti Sud-Ovest Milanese</span>
+                    <a href="https://www.instagram.com/atsom.milano" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"
+                            style="opacity:0.8; flex-shrink:0;">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links" style="color: white;">
+                    <a href="legal.html#privacy" style="border-bottom: 1px solid rgba(255,255,255,0.4);">Informativa
+                        sulla privacy</a>
+                    <span style="opacity: 0.4;">|</span>
+                    <a href="legal.html#terms">Termini e Condizioni</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switcher
+        function switchTab(panelId, btn) {
+            document.querySelectorAll('.legal-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.legal-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById(panelId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // Handle deep links: legal.html#terms or legal.html#privacy
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash === '#terms') {
+                switchTab('terms-panel', document.getElementById('tab-terms'));
+            }
+        });
+
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

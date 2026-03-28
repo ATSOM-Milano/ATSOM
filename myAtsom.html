@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11335C">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>myATSOM | Il tuo mobility companion</title>
+    <meta name="description"
+        content="myATSOM è l'app gratuita per il trasporto pubblico del sud-ovest milanese. Fermate, linee, orari e avvisi in un'unica app. Senza abbonamenti, senza pubblicità, senza login.">
+    <link rel="icon" type="image/png" href="FavIconAtsom.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="myATSOM">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="redesign.css">
+    <style>
+        /* Principle cards */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 20px;
+        }
+
+        .principle-card {
+            background: white;
+            border: 2.5px solid var(--atsom-navy);
+            padding: 22px 20px;
+        }
+
+        .principle-card:first-child {
+            border-radius: 17px 4px 4px 17px;
+        }
+
+        .principle-card:nth-child(2) {
+            border-left: none;
+            border-right: none;
+            border-radius: 4px;
+        }
+
+        .principle-card:last-child {
+            border-radius: 4px 17px 17px 4px;
+        }
+
+        .principle-card .principle-num {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--atsom-navy);
+            margin-bottom: 4px;
+        }
+
+        .principle-card .principle-num span {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .principle-card p {
+            font-size: 0.85rem;
+            color: var(--atsom-navy);
+            opacity: 0.75;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+
+        /* Users section */
+        .users-section {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            padding: 35px 0 20px;
+            background: white;
+        }
+
+        .users-section-text {
+            flex: 1.1;
+        }
+
+        .users-section-text h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--atsom-navy);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .users-section-text p {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--atsom-navy);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .users-section-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .users-section-visual img {
+            width: 100%;
+            border-radius: 17px;
+        }
+
+        @media (max-width: 640px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .principle-card:first-child {
+                border-radius: 17px 17px 4px 4px;
+            }
+
+            .principle-card:nth-child(2) {
+                border: 2.5px solid var(--atsom-navy);
+                border-top: none;
+                border-bottom: none;
+                border-radius: 4px;
+            }
+
+            .principle-card:last-child {
+                border-radius: 4px 4px 17px 17px;
+            }
+
+            .users-section {
+                flex-direction: column;
+                gap: 24px;
+                padding: 28px 0 16px;
+            }
+
+            .users-section-text h2 {
+                font-size: 1.9rem;
+            }
+
+            .users-section-visual img {
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body class="landing-body" style="background: white !important;">
+    <div class="container-figma" style="margin-top: 20px; padding-bottom: 20px;">
+
+        <!-- News Ticker -->
+        <div class="news-ticker-container">
+            <div class="news-label">Ultime notizie</div>
+            <div class="news-scroll">
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
+            </div>
+        </div>
+
+        <!-- Split Header Nav — myATSOM active -->
+        <nav class="header-split">
+            <div class="header-btn header-logo-box radius-left">
+                <a href="index.html"><img src="atsom.png" alt="ATSOM Logo"></a>
+            </div>
+            <a href="chi-siamo.html" class="header-btn btn-chi-siamo radius-mid" style="background: #0D2646;">Chi
+                siamo</a>
+            <a href="https://news.atsom.org" class="header-btn btn-news radius-mid">ATSOMnews</a>
+            <a href="myAtsom.html" class="header-btn btn-myatsom radius-right"
+                style="border-bottom: 3px solid rgba(255,255,255,0.5);">myATSOM</a>
+        </nav>
+
+        <!-- Hero Section — single CTA -->
+        <header class="hero-figma">
+            <div class="hero-figma-content reveal">
+                <div
+                    style="color: white; font-size: 2.8rem; font-weight: 900; line-height: 1; margin-bottom: 8px; letter-spacing: -1.5px;">
+                    Piacere! Sono</div>
+                <img src="myAtsomLogo.png" alt="myATSOM!"
+                    style="height: 52px; filter: brightness(0) invert(1); margin-bottom: 14px; display: block;">
+                <div class="subtitle" style="color: white;">E' arrivato il mobility companion per il sud-ovest milanese!
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <a href="" class="service-card-pill-btn" id="hero-install-btn"
+                        style="margin-top: 0; background: #71B3F5; color: white; border-radius: 17px;">Disponibile a
+                        breve</a>
+                </div>
+            </div>
+            <div class="hero-figma-visual">
+                <img src="img/ImmagineCellulari.png" alt="App Mockup">
+            </div>
+        </header>
+
+        <!-- Cos'è myATSOM? -->
+        <section style="margin-bottom: 20px;">
+            <div class="section-header-bar">Cos'è myATSOM?</div>
+            <div class="box-figma reveal" style="border-radius: 4px 4px 17px 17px;">
+                <p style="font-size: 1.15rem; font-weight: 800; color: white; line-height: 1.5; margin: 0;">
+                    E' ora di migliorare i tuoi viaggi sui mezzi del sud-ovest milanese!
+                    myATSOM è la applicazione che riunisce tutti le fermate, tutte le
+                    linee e tutti gli avvisi in un unica app!
+                </p>
+            </div>
+        </section>
+
+        <!-- I tre principi fondamentali -->
+        <section style="margin-bottom: 20px;">
+            <div class="section-header-bar">I tre principi fondamentali</div>
+            <div class="principles-grid reveal">
+                <!-- Card 1 -->
+                <div class="principle-card">
+                    <div class="principle-num">1. <span>No abbonamenti</span></div>
+                    <p>A chi piacciono gli abbonamenti per un qualcosa di comune? Infatti myATSOM non ne ha!
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="principle-card">
+                    <div class="principle-num">2. <span>Pubblicità? Ma anche no!</span></div>
+                    <p>Questa app è spinta dalla passione delle persone che ci lavorano. Niente pubblicità fastidiosa
+                        per guadagnare!</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="principle-card">
+                    <div class="principle-num">3. <span>Nessun login</span></div>
+                    <p>Non abbiamo bisogno della tua mail o del tuo nome per mandare avanti questo progetto, quindi non
+                        troverai login!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gli utenti sono al centro di tutto -->
+        <section class="users-section">
+            <div class="users-section-text reveal">
+                <h2>Gli utenti sono al centro di tutto.</h2>
+                <p>Autobus o tram in ritardo? Segnalalo e avvisa gli altri utenti! Che si tratti di un ritardo, una
+                    corsa saltata, un incidente o un guasto, la tua segnalazione può aiutare tutti a viaggiare meglio.
+                </p>
+            </div>
+            <div class="users-section-visual reveal">
+                <img src="img/ImmagineCellulariRitardo.png" alt="segnalazioni in-app"
+                    style="filter: drop-shadow(0 20px 40px rgba(17,51,92,0.18));">
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-figma">
+            <div class="footer-milan-box">
+                <img src="img/BasedInMilan.png" alt="Based in Milan" style="height: 40px;">
+                <img src="img/MilanSkylineHitachi.png" alt="Skyline" class="milan-graphic"
+                    style="opacity: 0.25; height: 80%;">
+            </div>
+            <div class="footer-legal-bar">
+                <div style="color: white; display: flex; align-items: center; gap: 16px;">
+                    <span>© ATSOM | Associazione Trasporti Sud-Ovest Milanese</span>
+                    <a href="https://www.instagram.com/atsom.milano" target="_blank" rel="noopener noreferrer"
+                        style="display: flex; align-items: center; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"
+                            style="opacity:0.8; flex-shrink:0;">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-links" style="color: white;">
+                    <a href="legal.html#terms">Termini e Condizioni</a>
+                    <span style="opacity: 0.4;">|</span>
+                    <a href="legal.html#privacy">Informativa sulla privacy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
