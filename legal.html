@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#11335C">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Privacy & Termini | myATSOM</title>
+    <title>ATSOM | Privacy e Termini</title>
     <meta name="description" content="Informativa sulla privacy e termini e condizioni di utilizzo di myATSOM.">
     <link rel="icon" type="image/png" href="FavIconAtsom.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="myATSOM">
     <link rel="apple-touch-icon" href="icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,15 +136,15 @@
 <body class="landing-body" style="background: white !important;">
     <div class="container-figma" style="margin-top: 20px; padding-bottom: 20px;">
 
-        <!-- News Ticker -->
-        <div class="news-ticker-container">
-            <div class="news-label">Ultime notizie</div>
-            <div class="news-scroll">
-                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
-                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
-                <span class="news-item">ATSOMnews: in arrivo a breve!</span>
-            </div>
-        </div>
+ <!-- News Ticker Dinamico -->
+<div class="news-ticker-container">
+    <div class="news-label">Ultime notizie</div>
+    <div class="news-scroll" id="breaking-news-ticker">
+        <!-- Le notizie verranno inserite qui automaticamente -->
+        <span class="news-item">Caricamento notizie...</span>
+    </div>
+</div>
+
 
         <!-- Split Header Nav -->
         <nav class="header-split">
@@ -338,6 +339,48 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
+    <!-- Firebase & News Logic -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js" type="module"></script> <!-- Assicurati che il percorso sia corretto -->
+
+<script type="module">
+    import { newsApi } from './news-api.js'; // Percorso verso il tuo file news-api.js
+
+    async function updateTicker() {
+        const tickerContainer = document.getElementById('breaking-news-ticker');
+        
+        // Recuperiamo le ultime 5 notizie
+        const news = await newsApi.getLatestNews(5);
+        
+        if (news.length > 0) {
+            // Puliamo il ticker
+            tickerContainer.innerHTML = '';
+            
+            // Inseriamo ogni notizia come uno span clickable
+            news.forEach(item => {
+                const span = document.createElement('span');
+                span.className = 'news-item';
+                span.style.cursor = 'pointer';
+                span.textContent = `ATSOMnews: ${item.title} • `;
+                
+                // Opzionale: cliccando sulla notizia si va all'articolo
+                span.onclick = () => {
+                    window.location.href = `https://news.atsom.org/notizia.html?id=${item.id}`;
+                };
+                
+                tickerContainer.appendChild(span);
+            });
+        } else {
+            tickerContainer.innerHTML = '<span class="news-item">Nessuna notizia recente.</span>';
+        }
+    }
+
+    // Avviamo l'aggiornamento
+    updateTicker();
+</script>
+
 </body>
 
 </html>
