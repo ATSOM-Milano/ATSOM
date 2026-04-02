@@ -136,14 +136,14 @@
 <body class="landing-body" style="background: white !important;">
     <div class="container-figma" style="margin-top: 20px; padding-bottom: 20px;">
 
- <!-- News Ticker Dinamico -->
-<div class="news-ticker-container">
-    <div class="news-label">Ultime notizie</div>
-    <div class="news-scroll" id="breaking-news-ticker">
-        <!-- Le notizie verranno inserite qui automaticamente -->
-        <span class="news-item">Caricamento notizie...</span>
-    </div>
-</div>
+        <!-- News Ticker Dinamico -->
+        <div class="news-ticker-container">
+            <div class="news-label">Ultime notizie</div>
+            <div class="news-scroll" id="breaking-news-ticker">
+                <!-- Le notizie verranno inserite qui automaticamente -->
+                <span class="news-item">Caricamento notizie...</span>
+            </div>
+        </div>
 
 
         <!-- Split Header Nav -->
@@ -172,7 +172,7 @@
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                     </svg>
-                    <span>myATSOM è progettata privacy-first, nessun dato personale verrà salvato</span>
+                    <span>ATSOM è un progetto privacy-first, nessun dato personale verrà salvato</span>
                 </div>
 
                 <!-- Tab buttons -->
@@ -189,56 +189,92 @@
                 <div class="legal-panel active" id="privacy-panel">
 
                     <div class="legal-block">
+                        <h2>0. Chi siamo</h2>
+                        <p><strong>ATSOM - Assocazione Trasporti Sud-Ovest Milanese</strong> ("noi", "nostro") è
+                            un'associazione no-profit dedicata
+                            all'informazione dell'utenza riguardo i servizi di trasporto pubblico locale del sud-ovest
+                            milanese e del bacino di mobilità della Città Metropolitana di Milano.</p>
+                    </div>
+
+                    <div class="legal-block">
                         <h2>1. Titolare del Trattamento</h2>
-                        <p>Il titolare del trattamento è Mattia Forgione, fondatore dell'Associazione Trasporti Sud
-                            Ovest Milanese (ATSOM).</p>
+                        <p>Il titolare del trattamento è <strong>Mattia Forgione</strong>, fondatore dell'Associazione
+                            Trasporti Sud Ovest Milanese (ATSOM). Per qualsiasi richiesta riguardante i tuoi dati, puoi
+                            scriverci tramite i nostri canali social ufficiali o tramite l'email quiperte@atsom.org.</p>
                     </div>
 
                     <div class="legal-block">
-                        <h2>2. Nessun Dato Salvato</h2>
-                        <p>myATSOM è progettata per essere "privacy-first". Non salviamo alcun dato personale degli
-                            utenti sui nostri server. In particolare:</p>
+                        <h2>2. Tipologia di Dati Raccolti</h2>
+                        <p>Le applicazioni ATSOM (myATSOM e ATSOMnews) sono progettate per ridurre al minimo la raccolta
+                            di dati personali. I dati trattati includono:</p>
                         <ul>
-                            <li>Non utilizziamo database per memorizzare le tue ricerche o la tua posizione.</li>
-                            <li>Non è richiesta alcuna registrazione o creazione di account.</li>
-                            <li>Non salviamo nomi, contatti o indirizzi e-mail.</li>
+                            <li><strong>Dati di Navigazione:</strong> Indirizzo IP, tipo di browser e parametri del
+                                dispositivo (tramite log di sistema di GitHub Pages e Firebase Hosting) per finalità di
+                                sicurezza e stabilità.</li>
+                            <li><strong>Geolocalizzazione:</strong> Se acconsenti, utilizziamo la tua posizione per
+                                mostrare le fermate vicine. La coordinata viene inviata a <strong>OpenStreetMap
+                                    (Nominatim)</strong> per essere convertita in indirizzo leggibile e a
+                                <strong>OpenRouteService
+                                    (HeGIT gGmbH)</strong> per calcolare i percorsi.
+                            </li>
+                            <li><strong>Notifiche Push (FCM):</strong> Per inviarti avvisi in tempo reale, viene
+                                generato un token univoco del dispositivo tramite <strong>Firebase Cloud
+                                    Messaging</strong>.</li>
+                            <li><strong>Segnalazioni Utenti:</strong> Quando invii una segnalazione su un disservizio
+                                (ritardo, guasto), salviamo su <strong>Firebase Firestore</strong> l'ID della linea, il
+                                tipo di problema e l'orario. Queste informazioni sono anonime e non collegate alla tua
+                                identità.</li>
+                            <li><strong>Credenziali Admin:</strong> Per i soli operatori autorizzati di ATSOMnews e
+                                myATSOM, trattiamo username e password per l'accesso all'area gestionale.</li>
                         </ul>
                     </div>
 
                     <div class="legal-block">
-                        <h2>3. Cookie e Tracciamento</h2>
-                        <p>L'applicazione myATSOM NON utilizza cookie di profilazione o script di tracciamento di terze
-                            parti. Tutto il funzionamento dell'app è basato su tecnologie locali al tuo browser.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>4. Geolocalizzazione</h2>
-                        <p>L'app richiede l'accesso alla tua posizione solo per mostrare le fermate più vicine a te
-                            sulla mappa. La tua posizione viene elaborata esclusivamente dal tuo browser e NON viene mai
-                            inviata o memorizzata sui nostri server o su quelli di servizi di terze parti.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>5. Hosting e Log di Sistema</h2>
-                        <p>Il sito è ospitato da GitHub Pages. Come ogni servizio web, il fornitore dell'hosting
-                            potrebbe registrare i log di sistema che includono il tuo indirizzo IP per motivi di
-                            sicurezza tecnica e stabilità del servizio.</p>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>6. Comunicazione con Firebase e Firestore</h2>
-                        <p>myATSOM utilizza i servizi <strong style="color: white;">Firebase</strong> e <strong
-                                style="color: white;">Firestore</strong> di Google per abilitare alcune funzionalità
-                            dell'app, tra cui:</p>
+                        <h2>3. Finalità e Base Giuridica</h2>
+                        <p>Trattiamo i tuoi dati per:</p>
                         <ul>
-                            <li>La ricezione di notifiche e avvisi in tempo reale sui mezzi pubblici.</li>
-                            <li>La gestione delle segnalazioni collettive (ritardi, corse saltate, guasti).</li>
-                            <li>Il recupero di dati dinamici come orari e aggiornamenti di servizio.</li>
+                            <li><strong>Fornire il servizio (Art. 6.1.b GDPR):</strong> Calcolo percorsi e
+                                visualizzazione news.</li>
+                            <li><strong>Consenso (Art. 6.1.a GDPR):</strong> Per l'accesso alla posizione e l'invio di
+                                notifiche push.</li>
+                            <li><strong>Legittimo Interesse (Art. 6.1.f GDPR):</strong> Per garantire la sicurezza del
+                                sito e prevenire attacchi informatici (tramite i log di hosting).</li>
                         </ul>
-                        <p style="margin-top: 10px;">Queste comunicazioni avvengono in modo anonimo: <strong
-                                style="color: white;">non vengono raccolti, trasmessi o conservati dati personali né
-                                informazioni identificative del dispositivo dell'utente</strong>. ATSOM non associa mai
-                            le richieste effettuate a Firebase/Firestore a singoli individui.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>4. Servizi di Terze Parti</h2>
+                        <p>Utilizziamo i seguenti partner tecnici che possono trattare dati per nostro conto:</p>
+                        <ul>
+                            <li><strong>Google LLC (Firebase):</strong> Per database Firestore, Storage media e
+                                Notifiche Cloud.</li>
+                            <li><strong>GitHub, Inc.:</strong> Per l'hosting del codice sorgente e delle pagine web.
+                            </li>
+                            <li><strong>OpenStreetMap Foundation (Nominatim):</strong> Per la ricerca di indirizzi e il
+                                reverse geocoding della posizione.</li>
+                            <li><strong>HeGIT gGmbH (OpenRouteService):</strong> Per il calcolo dei percorsi.</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>5. Cookie e Archiviazione Locale</h2>
+                        <p>Non utilizziamo cookie di profilazione o tracciamento pubblicitario. Utilizziamo lo
+                            <strong>Storage Locale</strong> del browser per migliorare l'esperienza:
+                        </p>
+                        <ul>
+                            <li>`read_notifications`: per non mostrarti più avvisi che hai già letto.</li>
+                            <li>`last_report_timestamp`: per limitare l'invio di segnalazioni consecutive (antispam).
+                            </li>
+                            <li>`atsom_route_cache`: per velocizzare il caricamento dei percorsi (Session Storage).</li>
+                        </ul>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>6. Diritti dell'Interessato</h2>
+                        <p>Ai sensi del GDPR, hai il diritto di accedere ai tuoi dati, chiederne la rettifica o la
+                            cancellazione, limitarne il trattamento o opporti allo stesso. Poiché la maggior parte dei
+                            dati in myATSOM è memorizzata localmente sul TUO dispositivo, puoi "cancellarli"
+                            semplicemente svuotando la cache del browser o i dati del sito.</p>
                     </div>
 
                 </div>
@@ -248,35 +284,95 @@
 
                     <div class="legal-block">
                         <h2>1. Finalità del Servizio</h2>
-                        <p>myATSOM è uno strumento informativo indipendente creato per facilitare la consultazione degli
+                        <p><strong>myATSOM</strong> è uno strumento informativo indipendente creato per facilitare la
+                            consultazione degli
                             orari e delle linee di trasporto pubblico locale nel Sud Ovest Milanese. Non è
-                            un'applicazione ufficiale o affiliata alle aziende di trasporto citate o alla Agenzia per il
-                            Trasporto Pubblico Locale del bacino della Città Metropolitana di Milano.</p>
+                            un'applicazione ufficiale o affiliata alle aziende di trasporto citate (es. ATM s.p.a., STAV
+                            Vigevano s.p.a.).
+                            <br><br>
+                            <strong>ATSOMnews</strong> è un portale notiziario indipendente creato per
+                            informare i cittadini sulle notizie relative ai mezzi di trasporto pubblico nel Sud Ovest
+                            Milanese e non.
+                        </p>
                     </div>
 
                     <div class="legal-block">
-                        <h2>2. Accuratezza dei Dati</h2>
-                        <p>Sebbene facciamo il possibile per mantenere i dati aggiornati e accurati, gli orari e i
-                            percorsi sono basati su dati pubblicamente disponibili e potrebbero subire variazioni senza
-                            preavviso da parte dei vettori (STAV s.p.a. e altri). Non garantiamo l'esattezza assoluta
-                            delle informazioni fornite.</p>
+                        <h2>2. Crowdsourcing e Contributi Utenti (GUC)</h2>
+                        <p>Il valore del nostro servizio si basa sulla partecipazione della community. Inviando una
+                            segnalazione (GUC - Generation User Content) su ritardi, guasti o corse saltate, garantisci
+                            che l'informazione sia veritiera. Inviando tali contenuti, concedi ad ATSOM una licenza
+                            gratuita e non esclusiva per visualizzare ed elaborare tali dati al fine di informare gli
+                            altri utenti in tempo reale.</p>
                     </div>
 
                     <div class="legal-block">
-                        <h2>3. Esclusione di Responsabilità</h2>
-                        <p>ATSOM e gli sviluppatori di myATSOM non sono responsabili per eventuali danni, diretti o
-                            indiretti, derivanti dall'utilizzo dell'app, inclusi (ma non limitati a):</p>
+                        <h2>3. Accuratezza dei Dati</h2>
+                        <p>Sebbene facciamo il possibile per mantenere i dati aggiornati, gli orari e i percorsi sono
+                            basati su dataset pubblici (Open Data) forniti dai vettori. ATSOM agisce solo come
+                            aggregatore e piattaforma e non può garantire la veridicità, l'attualità o la completezza di
+                            tali avvisi o dei dati forniti in modalità crowdsourcing.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>4. Limitazione di Responsabilità</h2>
+                        <p>ATSOM e i suoi sviluppatori non sono responsabili per eventuali danni, diretti o indiretti,
+                            derivanti dall'utilizzo dell'app, inclusi ritardi, mancate coincidenze o disagi causati
+                            dall'affidamento sulle informazioni (ufficiali o fornite dagli utenti) presenti nel
+                            servizio.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>5. Proprietà Intellettuale</h2>
+                        <p>I software di ATSOM, i loghi originali, il design delle interfacce e i contenuti editoriali
+                            di ATSOMnews sono di esclusiva proprietà dell'associazione. È vietata la copia, la modifica
+                            o la
+                            rivendita di tali elementi senza autorizzazione scritta.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>6. Condotte Vietate e Abuso</h2>
+                        <p>È severamente vietato l'invio di segnalazioni mendaci, spam o contenuti offensivi tramite la
+                            piattaforma. È altrettanto vietato l'utilizzo di script, bot o altri sistemi automatizzati
+                            per l'estrazione selvaggia di dati (scraping) dai nostri sistemi. La violazione di queste
+                            regole potrà comportare l'inibizione dell'accesso al servizio.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>7. Modifiche e Sospensione del Servizio</h2>
+                        <p>Poiché ATSOM è un progetto no-profit gestito da volontari, ci riserviamo il diritto di
+                            sospendere, modificare o interrompere il servizio in qualsiasi momento per motivi tecnici,
+                            manutenzione o cessazione del progetto, senza alcun preavviso.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>8. Legge Applicabile</h2>
+                        <p>I presenti Termini sono regolati dalla legge italiana. Qualsiasi controversia relativa
+                            all'uso
+                            del servizio sarà di competenza esclusiva del Foro di Milano.</p>
+                    </div>
+
+                    <div class="legal-block">
+                        <h2>9. Termini Specifici per ATSOMnews</h2>
+                        <p>L'utilizzo del portale di notizie ATSOMnews è soggetto alle seguenti condizioni aggiuntive:
+                        </p>
                         <ul>
-                            <li>Mancata coincidenza di mezzi di trasporto.</li>
-                            <li>Ritardi causati da informazioni non aggiornate o errate.</li>
-                            <li>Qualsiasi disagio causato dall'affidamento esclusivo sui dati dell'app.</li>
+                            <li><strong>Natura Informativa:</strong> Gli articoli e le notizie pubblicate hanno scopo
+                                puramente informativo. Sebbene ATSOM si impegni a verificare le fonti, i contenuti non
+                                sostituiscono in alcun modo le comunicazioni ufficiali degli enti gestori del trasporto
+                                pubblico.</li>
+                            <li><strong>Contenuti di Terze Parti:</strong> ATSOMnews può incorporare media (video, post,
+                                immagini) provenienti da piattaforme esterne (YouTube, Instagram, Facebook, X). Il
+                                caricamento di tali contenuti è soggetto ai termini di servizio e alle privacy policy
+                                dei
+                                rispettivi provider.</li>
+                            <li><strong>Responsabilità Editoriale:</strong> ATSOM non è responsabile per le opinioni
+                                espresse nei commenti (ove presenti) o per eventuali danni derivanti dall'uso delle
+                                informazioni riportate negli articoli.</li>
+                            <li><strong>Link Esterni:</strong> Non esercitiamo alcun controllo sui siti web collegati
+                                tramite
+                                link ipertestuali e non ci assumiamo alcuna responsabilità per il loro contenuto o le
+                                loro pratiche di privacy.</li>
                         </ul>
-                    </div>
-
-                    <div class="legal-block">
-                        <h2>4. Modifiche al Servizio</h2>
-                        <p>Ci riserviamo il diritto di sospendere o modificare il servizio in qualsiasi momento per
-                            manutenzione o aggiornamenti.</p>
                     </div>
 
                 </div>
@@ -341,45 +437,45 @@
     </script>
 
     <!-- Firebase & News Logic -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js" type="module"></script> <!-- Assicurati che il percorso sia corretto -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js" type="module"></script> <!-- Assicurati che il percorso sia corretto -->
 
-<script type="module">
-    import { newsApi } from './news-api.js'; // Percorso verso il tuo file news-api.js
+    <script type="module">
+        import { newsApi } from './news-api.js'; // Percorso verso il tuo file news-api.js
 
-    async function updateTicker() {
-        const tickerContainer = document.getElementById('breaking-news-ticker');
-        
-        // Recuperiamo le ultime 5 notizie
-        const news = await newsApi.getLatestNews(5);
-        
-        if (news.length > 0) {
-            // Puliamo il ticker
-            tickerContainer.innerHTML = '';
-            
-            // Inseriamo ogni notizia come uno span clickable
-            news.forEach(item => {
-                const span = document.createElement('span');
-                span.className = 'news-item';
-                span.style.cursor = 'pointer';
-                span.textContent = `ATSOMnews: ${item.title} • `;
-                
-                // Opzionale: cliccando sulla notizia si va all'articolo
-                span.onclick = () => {
-                    window.location.href = `https://news.atsom.org/notizia.html?id=${item.id}`;
-                };
-                
-                tickerContainer.appendChild(span);
-            });
-        } else {
-            tickerContainer.innerHTML = '<span class="news-item">Nessuna notizia recente.</span>';
+        async function updateTicker() {
+            const tickerContainer = document.getElementById('breaking-news-ticker');
+
+            // Recuperiamo le ultime 5 notizie
+            const news = await newsApi.getLatestNews(5);
+
+            if (news.length > 0) {
+                // Puliamo il ticker
+                tickerContainer.innerHTML = '';
+
+                // Inseriamo ogni notizia come uno span clickable
+                news.forEach(item => {
+                    const span = document.createElement('span');
+                    span.className = 'news-item';
+                    span.style.cursor = 'pointer';
+                    span.textContent = `ATSOMnews: ${item.title} • `;
+
+                    // Opzionale: cliccando sulla notizia si va all'articolo
+                    span.onclick = () => {
+                        window.location.href = `https://news.atsom.org/notizia.html?id=${item.id}`;
+                    };
+
+                    tickerContainer.appendChild(span);
+                });
+            } else {
+                tickerContainer.innerHTML = '<span class="news-item">Nessuna notizia recente.</span>';
+            }
         }
-    }
 
-    // Avviamo l'aggiornamento
-    updateTicker();
-</script>
+        // Avviamo l'aggiornamento
+        updateTicker();
+    </script>
 
 </body>
 

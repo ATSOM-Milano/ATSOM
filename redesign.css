@@ -36,10 +36,21 @@ textarea {
     margin: 0 auto;
 }
 
-.radius-left { border-radius: var(--r-outer) var(--r-inner) var(--r-inner) var(--r-outer); }
-.radius-mid { border-radius: var(--r-inner); }
-.radius-right { border-radius: var(--r-inner) var(--r-outer) var(--r-outer) var(--r-inner); }
-.radius-all { border-radius: var(--r-outer); }
+.radius-left {
+    border-radius: var(--r-outer) var(--r-inner) var(--r-inner) var(--r-outer);
+}
+
+.radius-mid {
+    border-radius: var(--r-inner);
+}
+
+.radius-right {
+    border-radius: var(--r-inner) var(--r-outer) var(--r-outer) var(--r-inner);
+}
+
+.radius-all {
+    border-radius: var(--r-outer);
+}
 
 /* News Ticker */
 .news-ticker-container {
@@ -82,8 +93,13 @@ textarea {
 }
 
 @keyframes ticker-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* Header / Profile Split Nav */
@@ -107,7 +123,9 @@ textarea {
     transition: transform 0.2s, opacity 0.2s;
 }
 
-.header-btn:active { transform: scale(0.98); }
+.header-btn:active {
+    transform: scale(0.98);
+}
 
 .header-logo-box {
     background: var(--atsom-navy);
@@ -117,7 +135,9 @@ textarea {
 }
 
 /* Disable the press animation on the logo box — only the link/img should show feedback */
-.header-logo-box:active { transform: none; }
+.header-logo-box:active {
+    transform: none;
+}
 
 .header-logo-box a {
     display: flex;
@@ -136,9 +156,17 @@ textarea {
 }
 
 
-.btn-chi-siamo { background: var(--atsom-navy); }
-.btn-news { background: var(--atsom-coral); }
-.btn-myatsom { background: var(--atsom-purple); }
+.btn-chi-siamo {
+    background: var(--atsom-navy);
+}
+
+.btn-news {
+    background: var(--atsom-coral);
+}
+
+.btn-myatsom {
+    background: var(--atsom-purple);
+}
 
 /* Hero Section Figma */
 .hero-figma {
@@ -195,7 +223,7 @@ textarea {
 .hero-figma-visual img {
     width: 130%;
     position: absolute;
-    top: -30px;
+    top: -20px;
     right: -5%;
     object-fit: contain;
 }
@@ -228,8 +256,13 @@ textarea {
     justify-content: space-between;
 }
 
-.card-purple { background: var(--atsom-purple); }
-.card-blue { background: var(--atsom-blue-light); }
+.card-purple {
+    background: var(--atsom-purple);
+}
+
+.card-blue {
+    background: var(--atsom-blue-light);
+}
 
 .service-card-figma img {
     height: 48px;
@@ -256,8 +289,13 @@ textarea {
     align-self: flex-start;
 }
 
-.btn-purple { color: var(--atsom-purple); }
-.btn-blue { color: var(--atsom-blue-light); }
+.btn-purple {
+    color: var(--atsom-purple);
+}
+
+.btn-blue {
+    color: var(--atsom-blue-light);
+}
 
 /* About / Team Cards */
 .box-figma {
@@ -338,7 +376,7 @@ textarea {
 }
 
 .footer-legal-bar {
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 14px 30px;
     display: flex;
     justify-content: space-between;
@@ -364,10 +402,15 @@ textarea {
 
 /* ── TABLET & SMALL DESKTOP (≤ 900px) ── */
 @media (max-width: 900px) {
-    .container-figma { width: 94%; }
+    .container-figma {
+        width: 94%;
+    }
 
     /* Services: single column */
-    .services-grid { grid-template-columns: 1fr; gap: 10px; }
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
 
     /* Hero: slightly compact */
     .hero-figma {
@@ -381,16 +424,26 @@ textarea {
     }
 
     /* Footer: smaller text */
-    .footer-legal-bar { font-size: 0.74rem; }
+    .footer-legal-bar {
+        font-size: 0.74rem;
+    }
 }
 
 /* ── MOBILE (≤ 640px) ── */
 @media (max-width: 640px) {
-    .container-figma { width: 96%; }
+    .container-figma {
+        width: 96%;
+    }
 
     /* ── News ticker ── */
-    .news-label { font-size: 0.78rem; padding: 0 14px; }
-    .news-item  { font-size: 0.82rem; }
+    .news-label {
+        font-size: 0.78rem;
+        padding: 0 14px;
+    }
+
+    .news-item {
+        font-size: 0.82rem;
+    }
 
     /* ── Header nav ── */
     .header-split {
@@ -403,7 +456,8 @@ textarea {
 
     /* Logo: full width top row */
     .header-logo-box {
-        grid-column: 1 / -1;          /* span all 3 cols */
+        grid-column: 1 / -1;
+        /* span all 3 cols */
         border-radius: 17px 17px 4px 4px !important;
         height: 48px;
         padding-left: 18px;
@@ -418,9 +472,17 @@ textarea {
         flex: 1;
     }
 
-    .btn-chi-siamo { border-radius: 4px 4px 4px 17px !important; }
-    .btn-news      { border-radius: 4px !important; }
-    .btn-myatsom   { border-radius: 4px 4px 17px 4px !important; }
+    .btn-chi-siamo {
+        border-radius: 4px 4px 4px 17px !important;
+    }
+
+    .btn-news {
+        border-radius: 4px !important;
+    }
+
+    .btn-myatsom {
+        border-radius: 4px 4px 17px 4px !important;
+    }
 
     /* ── Hero ── */
     .hero-figma {
@@ -448,7 +510,9 @@ textarea {
         margin-bottom: 10px !important;
     }
 
-    .hero-figma-content .subtitle { font-size: 0.9rem; }
+    .hero-figma-content .subtitle {
+        font-size: 0.9rem;
+    }
 
     .hero-figma-visual {
         width: 100%;
@@ -468,28 +532,49 @@ textarea {
     }
 
     /* ── Section header bar ── */
-    .section-header-bar { font-size: 1rem; padding: 10px 18px; }
+    .section-header-bar {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
 
     /* ── Service cards ── */
-    .services-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
 
     .service-card-figma {
         padding: 28px 24px;
         min-height: unset;
     }
 
-    .service-card-figma h4 { font-size: 1.2rem; }
+    .service-card-figma h4 {
+        font-size: 1.2rem;
+    }
 
     /* ── Box figma (info cards) ── */
-    .box-figma { padding: 22px 20px; }
+    .box-figma {
+        padding: 22px 20px;
+    }
 
     /* ── Team cards ── */
-    .team-card { padding: 18px 20px; }
-    .team-card h5 { font-size: 1.6rem; }
+    .team-card {
+        padding: 18px 20px;
+    }
+
+    .team-card h5 {
+        font-size: 1.6rem;
+    }
 
     /* ── Instagram card ── */
-    .insta-card { padding: 28px 22px; }
-    .insta-handle { font-size: 2rem; }
+    .insta-card {
+        padding: 28px 22px;
+    }
+
+    .insta-handle {
+        font-size: 2rem;
+    }
 
     /* ── Footer ── */
     .footer-milan-box {
@@ -510,7 +595,9 @@ textarea {
         gap: 10px;
     }
 
-    .footer-links a { white-space: nowrap; }
+    .footer-links a {
+        white-space: nowrap;
+    }
 
     /* ── Pill buttons ── */
     .service-card-pill-btn {
@@ -521,23 +608,44 @@ textarea {
 
 /* ── NARROW MOBILE (≤ 380px) ── */
 @media (max-width: 380px) {
-    .header-split { grid-template-columns: 1fr 1fr; }
-    .btn-chi-siamo { border-radius: 4px 4px 4px 17px !important; }
-    .btn-news      { border-radius: 4px 4px 17px 4px !important; }
-    .btn-myatsom   { grid-column: 1 / -1; border-radius: 4px 4px 17px 17px !important; }
+    .header-split {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-chi-siamo {
+        border-radius: 4px 4px 4px 17px !important;
+    }
+
+    .btn-news {
+        border-radius: 4px 4px 17px 4px !important;
+    }
+
+    .btn-myatsom {
+        grid-column: 1 / -1;
+        border-radius: 4px 4px 17px 17px !important;
+    }
 
     .hero-figma-content div[style*="2.8rem"],
     .hero-figma-content h1 {
         font-size: 1.7rem !important;
     }
 
-    .insta-handle { font-size: 1.5rem; }
+    .insta-handle {
+        font-size: 1.5rem;
+    }
 }
 
 /* ── WIDE DESKTOP (≥ 1400px) ── */
 @media (min-width: 1400px) {
-    .hero-figma { min-height: 300px; max-height: 330px; }
-    .service-card-figma { min-height: 360px; padding: 48px; }
+    .hero-figma {
+        min-height: 300px;
+        max-height: 330px;
+    }
+
+    .service-card-figma {
+        min-height: 360px;
+        padding: 48px;
+    }
 }
 
 
@@ -601,7 +709,8 @@ textarea {
     z-index: 1001;
     font-weight: 700;
     color: #11335C;
-    font-size: 0.95rem; /* Slightly larger for readability */
+    font-size: 0.95rem;
+    /* Slightly larger for readability */
 }
 
 .weather-icon {
@@ -619,6 +728,7 @@ textarea {
 .weather-temp {
     line-height: 1;
 }
+
 /* --- NOTIFICATIONS --- */
 .notification-btn-wrapper {
     position: relative;
@@ -651,12 +761,14 @@ textarea {
 /* Floating Toast (Screenshot 1) */
 .notification-toast {
     position: absolute;
-    top: 130px; /* Aligned relative to search bar properly */
+    top: 130px;
+    /* Aligned relative to search bar properly */
     left: 20px;
     right: 20px;
     max-width: 500px;
     display: flex;
-    align-items: stretch; /* Match heights perfectly */
+    align-items: stretch;
+    /* Match heights perfectly */
     gap: 4px;
     z-index: 2000;
     animation: slideDownIn 0.4s var(--ease-ios);
@@ -667,7 +779,7 @@ textarea {
     background: white;
     border-radius: 17px 4px 4px 17px;
     padding: 14px 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -688,7 +800,7 @@ textarea {
     justify-content: center;
     cursor: pointer;
     border: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .toast-close-btn img {
@@ -701,8 +813,15 @@ textarea {
 
 
 @keyframes slideDownIn {
-    from { opacity: 0; transform: translate(-50%, -20px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 .notification-toast.hidden {
@@ -737,10 +856,11 @@ textarea {
     left: 20px;
     right: 20px;
     max-width: 400px;
-    background: white; /* Container is white in screenshot 2 */
+    background: white;
+    /* Container is white in screenshot 2 */
     border-radius: 25px;
     padding: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     z-index: 2101;
     max-height: 60vh;
     overflow-y: auto;
@@ -750,8 +870,15 @@ textarea {
 }
 
 @keyframes popIn {
-    from { opacity: 0; transform: translate(-50%, 10px) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, 10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
 }
 
 .notification-popup.hidden {
@@ -1143,7 +1270,7 @@ textarea {
     padding: 0 16px;
     gap: 10px;
     border-radius: 17px 4px 4px 17px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .map-state-pill .ooz-action {
@@ -1159,7 +1286,7 @@ textarea {
     text-align: center;
     cursor: pointer;
     border-radius: 4px 17px 17px 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .map-state-pill img {
@@ -1194,7 +1321,7 @@ textarea {
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 17px 4px 4px 17px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .out-of-zone-card .ooz-status img,
@@ -1203,14 +1330,31 @@ textarea {
     height: 32px;
     flex-shrink: 0;
     filter: brightness(0) invert(1);
-    animation: icon-shake 0.6s cubic-bezier(.36,.07,.19,.97) 0.5s both;
+    animation: icon-shake 0.6s cubic-bezier(.36, .07, .19, .97) 0.5s both;
 }
 
 @keyframes icon-shake {
-    10%, 90% { transform: translate3d(-1px, 0, 0) rotate(-2deg); }
-    20%, 80% { transform: translate3d(2px, 0, 0) rotate(4deg); }
-    30%, 50%, 70% { transform: translate3d(-3px, 0, 0) rotate(-6deg); }
-    40%, 60% { transform: translate3d(3px, 0, 0) rotate(6deg); }
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0) rotate(-2deg);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0) rotate(4deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-3px, 0, 0) rotate(-6deg);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(3px, 0, 0) rotate(6deg);
+    }
 }
 
 .out-of-zone-card .ooz-action {
@@ -1227,7 +1371,7 @@ textarea {
     transition: background 0.2s, transform 0.2s;
     text-align: center;
     border-radius: 4px 17px 17px 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .line-result-card.stagger-in,
@@ -2893,14 +3037,14 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .filter-icon-circle {
     width: 44px;
     height: 44px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -2949,10 +3093,10 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: .4s;
     border-radius: 34px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .slider-premium:before {
@@ -2965,14 +3109,14 @@ html {
     background-color: white;
     transition: .4s;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-input:checked + .slider-premium {
+input:checked+.slider-premium {
     background-color: #34C759;
 }
 
-input:checked + .slider-premium:before {
+input:checked+.slider-premium:before {
     transform: translateX(24px);
 }
 
@@ -3063,11 +3207,23 @@ input:checked + .slider-premium:before {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

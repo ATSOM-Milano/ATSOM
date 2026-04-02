@@ -21,125 +21,273 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="redesign.css">
     <style>
-        /* Principle cards */
+        /* --- PRINCIPLES GRID (Table-like) --- */
         .principles-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             margin-bottom: 20px;
+            gap: 0;
+            /* Joined look by default */
         }
 
         .principle-card {
             background: white;
-            border: 2.5px solid var(--atsom-navy);
-            padding: 22px 20px;
+            border: 2px solid var(--atsom-navy);
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s var(--ease-ios), box-shadow 0.3s var(--ease-ios);
         }
 
-        .principle-card:first-child {
-            border-radius: 17px 4px 4px 17px;
+        /* Joined look for Desktop */
+        @media (min-width: 901px) {
+            .principle-card:first-child {
+                border-radius: 17px 0 0 17px;
+            }
+
+            .principle-card:nth-child(2) {
+                border-left: none;
+                border-right: none;
+            }
+
+            .principle-card:last-child {
+                border-radius: 0 17px 17px 0;
+            }
         }
 
-        .principle-card:nth-child(2) {
-            border-left: none;
-            border-right: none;
-            border-radius: 4px;
+        /* Tablet Breakpoint (e.g. 2 columns or stack) */
+        @media (max-width: 900px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+                /* Stack for better reading */
+                gap: 12px;
+            }
+
+            .principle-card {
+                border-radius: 17px !important;
+                border: 2px solid var(--atsom-navy) !important;
+                box-shadow: 0 8px 20px rgba(17, 51, 92, 0.05);
+            }
         }
 
-        .principle-card:last-child {
-            border-radius: 4px 17px 17px 4px;
+        .principle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(17, 51, 92, 0.12);
+            z-index: 5;
         }
 
         .principle-card .principle-num {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--atsom-navy);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .principle-card .principle-num span {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
         }
 
         .principle-card p {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--atsom-navy);
-            opacity: 0.75;
-            font-weight: 600;
             line-height: 1.5;
-            margin-top: 6px;
+            font-weight: 600;
+            opacity: 0.8;
+            margin-top: 8px;
         }
 
-        /* Users section */
+
+        /* --- FEATURES SECTION --- */
+        .features-wrapper {
+            background: #f8fafc;
+            /* Very light subtle background */
+            border-radius: 24px;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
         .users-section {
             display: flex;
-            gap: 40px;
+            gap: 60px;
             align-items: center;
-            padding: 35px 0 20px;
-            background: white;
+            padding: 60px 40px;
+            background: transparent;
+            position: relative;
+            transition: all 0.4s var(--ease-ios);
+        }
+
+        /* Alternating layout for desktop */
+        .users-section:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
         .users-section-text {
-            flex: 1.1;
+            flex: 1;
+            z-index: 2;
+        }
+
+        .feature-label {
+            display: inline-block;
+            background: rgba(113, 179, 245, 0.15);
+            /* Transparent light blue */
+            color: var(--atsom-blue-light);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border: 1px solid rgba(113, 179, 245, 0.3);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 16px;
+        }
+
+        .users-section:nth-child(even) .feature-label {
+            background: rgba(146, 109, 247, 0.15);
+            color: var(--atsom-purple);
+            border-color: rgba(146, 109, 247, 0.3);
+        }
+
+        .users-section:nth-child(3) .feature-label {
+            background: rgba(255, 107, 107, 0.15);
+            color: var(--atsom-coral);
+            border-color: rgba(255, 107, 107, 0.3);
         }
 
         .users-section-text h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             color: var(--atsom-navy);
             line-height: 1.1;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .users-section-text p {
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--atsom-navy);
             line-height: 1.6;
+            opacity: 0.8;
             margin-bottom: 0;
         }
 
         .users-section-visual {
-            flex: 1;
+            flex: 1.2;
             position: relative;
+            transform-origin: center;
+            transition: transform 0.6s var(--spring-ios);
+        }
+
+        .users-section:hover .users-section-visual {
+            transform: scale(1.02) translateY(-5px);
         }
 
         .users-section-visual img {
             width: 100%;
-            border-radius: 17px;
+            border-radius: 20px;
+            filter: drop-shadow(0 25px 50px rgba(17, 51, 92, 0.15));
+            transition: filter 0.4s ease;
         }
 
-        @media (max-width: 640px) {
-            .principles-grid {
-                grid-template-columns: 1fr;
-            }
+        .users-section:hover .users-section-visual img {
+            filter: drop-shadow(0 30px 60px rgba(17, 51, 92, 0.25));
+        }
 
-            .principle-card:first-child {
-                border-radius: 17px 17px 4px 4px;
-            }
-
-            .principle-card:nth-child(2) {
-                border: 2.5px solid var(--atsom-navy);
-                border-top: none;
-                border-bottom: none;
-                border-radius: 4px;
-            }
-
-            .principle-card:last-child {
-                border-radius: 4px 4px 17px 17px;
-            }
-
+        @media (max-width: 900px) {
             .users-section {
-                flex-direction: column;
-                gap: 24px;
-                padding: 28px 0 16px;
+                gap: 30px;
+                padding: 40px 20px;
             }
 
             .users-section-text h2 {
-                font-size: 1.9rem;
+                font-size: 2.1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .features-wrapper {
+                margin: 20px 0;
+                padding: 20px 0;
+                border-radius: 17px;
+            }
+
+            .users-section,
+            .users-section:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                padding: 35px 20px;
+                text-align: center;
+            }
+
+            .users-section-text h2 {
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+
+            .users-section-text p {
+                font-size: 0.95rem;
+            }
+
+            .users-section-visual {
+                width: 100%;
             }
 
             .users-section-visual img {
                 border-radius: 12px;
+            }
+        }
+
+        /* --- COMING SOON FRAME --- */
+        .coming-soon-frame {
+            background: var(--atsom-navy);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            color: white;
+            margin: 20px 40px 40px;
+            box-shadow: 0 20px 40px rgba(17, 51, 92, 0.15);
+        }
+
+        .coming-soon-frame h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .coming-soon-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .coming-soon-badges img {
+            height: 48px;
+            width: auto;
+            transition: transform 0.3s var(--ease-ios);
+        }
+
+        .coming-soon-badges img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 640px) {
+            .coming-soon-frame {
+                margin: 20px 20px;
+                padding: 40px 20px;
+            }
+
+            .coming-soon-frame h3 {
+                font-size: 1.6rem;
+            }
+
+            .coming-soon-badges img {
+                height: 40px;
             }
         }
     </style>
@@ -148,14 +296,14 @@
 <body class="landing-body" style="background: white !important;">
     <div class="container-figma" style="margin-top: 20px; padding-bottom: 20px;">
 
-<!-- News Ticker Dinamico -->
-<div class="news-ticker-container">
-    <div class="news-label">Ultime notizie</div>
-    <div class="news-scroll" id="breaking-news-ticker">
-        <!-- Le notizie verranno inserite qui automaticamente -->
-        <span class="news-item">Caricamento notizie...</span>
-    </div>
-</div>
+        <!-- News Ticker Dinamico -->
+        <div class="news-ticker-container">
+            <div class="news-label">Ultime notizie</div>
+            <div class="news-scroll" id="breaking-news-ticker">
+                <!-- Le notizie verranno inserite qui automaticamente -->
+                <span class="news-item">Caricamento notizie...</span>
+            </div>
+        </div>
 
 
         <!-- Split Header Nav — myATSOM active -->
@@ -180,10 +328,10 @@
                     style="height: 52px; filter: brightness(0) invert(1); margin-bottom: 14px; display: block;">
                 <div class="subtitle" style="color: white;">E' arrivato il mobility companion per il sud-ovest milanese!
                 </div>
-                <div style="display: flex; gap: 6px;">
-                    <a href="" class="service-card-pill-btn" id="hero-install-btn"
-                        style="margin-top: 0; background: #71B3F5; color: white; border-radius: 17px;">Disponibile a
-                        breve</a>
+                <div style="display: flex; gap: 6px; margin-top: 15px;">
+                    <img src="img/GooglePlayBadgeSoon.png" alt="Google Play Coming Soon"
+                        style="height: 44px; width: auto;">
+                    <img src="img/PWABadgeSoon.png" alt="PWA Coming Soon" style="height: 44px; width: auto;">
                 </div>
             </div>
             <div class="hero-figma-visual">
@@ -228,19 +376,73 @@
             </div>
         </section>
 
-        <!-- Gli utenti sono al centro di tutto -->
-        <section class="users-section">
-            <div class="users-section-text reveal">
-                <h2>Gli utenti sono al centro di tutto.</h2>
-                <p>Autobus o tram in ritardo? Segnalalo e avvisa gli altri utenti! Che si tratti di un ritardo, una
-                    corsa saltata, un incidente o un guasto, la tua segnalazione può aiutare tutti a viaggiare meglio.
-                </p>
+        <!-- Alcune funzioni -->
+
+        <div class="features-wrapper reveal">
+            <section class="users-section">
+                <div class="users-section-text reveal">
+                    <span class="feature-label">Mappa Personale</span>
+                    <h2>Filtra in base a quello che ti serve!</h2>
+                    <p>Grazie al sistema di filtraggio sei tu a decidere cosa vedere sulla mappa. Nascondi quello che
+                        non
+                        ti serve e concentrati solo sulle linee che usi ogni giorno.
+                    </p>
+                </div>
+                <div class="users-section-visual reveal">
+                    <img src="img/Filtri.png" alt="Immagine Filtri">
+                </div>
+            </section>
+
+            <section class="users-section">
+                <div class="users-section-text reveal">
+                    <span class="feature-label">TravelCompanion™</span>
+                    <h2>Dove vogliamo andare?</h2>
+                    <p>Il tuo assistente personale per muoverti nel sud-ovest milanese. Grazie al potente
+                        motore di calcolo, troverai sempre il percorso migliore, con aggiornamenti in tempo reale sui
+                        prossimi passaggi.
+                    </p>
+                </div>
+                <div class="users-section-visual reveal">
+                    <img src="img/Navigazione.png" alt="Immagine Navigazione">
+                </div>
+            </section>
+
+            <section class="users-section">
+                <div class="users-section-text reveal">
+                    <span class="feature-label">Notifiche Smart</span>
+                    <h2>Rimani sempre informato.</h2>
+                    <p>Sciopero in arrivo o deviazione improvvisa? Sarai il primo a saperlo grazie alle notifiche push
+                        personalizzate di myATSOM. La tua mobilità, sempre sotto controllo.
+                    </p>
+                </div>
+                <div class="users-section-visual reveal">
+                    <img src="img/Notifiche.png" alt="Immagine Notifiche">
+                </div>
+            </section>
+
+            <section class="users-section">
+                <div class="users-section-text reveal">
+                    <span class="feature-label">Crowdsourcing</span>
+                    <h2>Gli utenti sono al centro di tutto.</h2>
+                    <p>Autobus in ritardo o corsa saltata? Segnalalo in un attimo e avvisa l'intera community! La tua
+                        voce aiuta tutti a viaggiare meglio e a rendere il servizio più trasparente.
+                    </p>
+                </div>
+                <div class="users-section-visual reveal">
+                    <img src="img/ImmagineCellulariRitardo.png" alt="segnalazioni in-app">
+                </div>
+            </section>
+
+            <!-- Coming Soon Frame -->
+            <div class="coming-soon-frame reveal">
+                <h3>In arrivo a breve...</h3>
+                <div class="coming-soon-badges">
+                    <img src="img/GooglePlayBadgeSoon.png" alt="Google Play Coming Soon">
+                    <img src="img/PWABadgeSoon.png" alt="PWA Coming Soon">
+                </div>
             </div>
-            <div class="users-section-visual reveal">
-                <img src="img/ImmagineCellulariRitardo.png" alt="segnalazioni in-app"
-                    style="filter: drop-shadow(0 20px 40px rgba(17,51,92,0.18));">
-            </div>
-        </section>
+        </div>
+
 
         <!-- Footer -->
         <footer class="footer-figma">
@@ -280,47 +482,47 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-    
+
     <!-- Firebase & News Logic -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js" type="module"></script> <!-- Assicurati che il percorso sia corretto -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js" type="module"></script> <!-- Assicurati che il percorso sia corretto -->
 
-<script type="module">
-    import { newsApi } from './news-api.js'; // Percorso verso il tuo file news-api.js
+    <script type="module">
+        import { newsApi } from './news-api.js'; // Percorso verso il tuo file news-api.js
 
-    async function updateTicker() {
-        const tickerContainer = document.getElementById('breaking-news-ticker');
-        
-        // Recuperiamo le ultime 5 notizie
-        const news = await newsApi.getLatestNews(5);
-        
-        if (news.length > 0) {
-            // Puliamo il ticker
-            tickerContainer.innerHTML = '';
-            
-            // Inseriamo ogni notizia come uno span clickable
-            news.forEach(item => {
-                const span = document.createElement('span');
-                span.className = 'news-item';
-                span.style.cursor = 'pointer';
-                span.textContent = `ATSOMnews: ${item.title} • `;
-                
-                // Opzionale: cliccando sulla notizia si va all'articolo
-                span.onclick = () => {
-                    window.location.href = `https://news.atsom.org/notizia.html?id=${item.id}`;
-                };
-                
-                tickerContainer.appendChild(span);
-            });
-        } else {
-            tickerContainer.innerHTML = '<span class="news-item">Nessuna notizia recente.</span>';
+        async function updateTicker() {
+            const tickerContainer = document.getElementById('breaking-news-ticker');
+
+            // Recuperiamo le ultime 5 notizie
+            const news = await newsApi.getLatestNews(5);
+
+            if (news.length > 0) {
+                // Puliamo il ticker
+                tickerContainer.innerHTML = '';
+
+                // Inseriamo ogni notizia come uno span clickable
+                news.forEach(item => {
+                    const span = document.createElement('span');
+                    span.className = 'news-item';
+                    span.style.cursor = 'pointer';
+                    span.textContent = `ATSOMnews: ${item.title} • `;
+
+                    // Opzionale: cliccando sulla notizia si va all'articolo
+                    span.onclick = () => {
+                        window.location.href = `https://news.atsom.org/notizia.html?id=${item.id}`;
+                    };
+
+                    tickerContainer.appendChild(span);
+                });
+            } else {
+                tickerContainer.innerHTML = '<span class="news-item">Nessuna notizia recente.</span>';
+            }
         }
-    }
 
-    // Avviamo l'aggiornamento
-    updateTicker();
-</script>
+        // Avviamo l'aggiornamento
+        updateTicker();
+    </script>
 
 </body>
 
